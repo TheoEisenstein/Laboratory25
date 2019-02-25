@@ -1,10 +1,12 @@
 @charset "ISO-8859-1";
 
+h5 {
+	color: yellow;
+}
+
 body {
 	background: red;
 }
 
-h5 {
-	color: yellow;
-}
+
 

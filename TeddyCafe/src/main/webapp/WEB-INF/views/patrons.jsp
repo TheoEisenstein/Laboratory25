@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 				<tr>
 					<td>${ anything.firstName }</td>
 					<td>${ anything.lastName }</td>
-					<td>${ anything.emailList ? "Yes" : "No" }</td>
+					<td>${ anything.emailList }</td>
 				</tr>
 				</c:forEach>
 			</tbody>

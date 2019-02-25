@@ -5,23 +5,23 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patron Registration</title>
+<title>Patron Edit</title>
 </head>
 <body>
 
-<h5>Becoming a Patron is easy!</h5>
+<h5>Patron Edit</h5>
 
-<form action="/patrons-registration" method="post">
+<form method="post">
 <input type="hidden" name="id" value="${patrons.id}" />
 
 <table>
 
 <tr>
-	<td><label for ="firstName">First Name: </label><input type="text"  pattern="[A-Z[a-z]*" name="firstName" value="${patrons.firstname }" required></td>
+	<td><label for ="firstName">First Name: </label><input type="text"  pattern="[A-Z[a-z]*" name="firstName" value="${ patrons.firstname }" required></td>
 </tr>	
 
 <tr>
-	<td><label for ="lastName">Last Name: </label><input type="text" pattern="[A-Z][a-z]*" name="lastName" value="${patrons.lastname}"  required></td>
+	<td><label for ="lastName">Last Name: </label><input type="text" pattern="[A-Z][a-z]*" name="lastName" value="${ patrons.lastname }"  required></td>
 </tr>
 
 <tr>
@@ -38,7 +38,7 @@
 </tr>
 </table>
 
-	<button type="submit" >Patronize Me</button>
+	<button type="submit" >Patron Fix</button>
 
 
 

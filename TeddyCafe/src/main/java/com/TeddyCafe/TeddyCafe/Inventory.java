@@ -1,7 +1,18 @@
 package com.TeddyCafe.TeddyCafe;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="items") //Name of my SQL table.
 public class Inventory {
 
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="items_id")// Name of SQL column
 	private Long id;
 	private String name;
 	private String description;
@@ -11,6 +22,29 @@ public class Inventory {
 	public Inventory() {
 		
 	}
+	
+	
+
+	public Inventory(String name, String description, int quantity, double price) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.quantity = quantity;
+		this.price = price;
+	}
+
+	
+
+	public Inventory(Long id, String name, String description, int quantity, double price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.quantity = quantity;
+		this.price = price;
+	}
+
+
 
 	public Long getId() {
 		return id;
