@@ -25,7 +25,7 @@
 				<tr>
 					<%-- Access properties of the java bean using simple . notation.
 					     This actually calls the getters behind the scenes. --%>
-					<td>${anything.name}</td><td>${anything.description}</td><td>${anything.quantity}</td><td>${anything.price}</td><td>Only Delete</td><td><a href="/inventory-delete">DELETE</a></td>
+					<td>${anything.name}</td><td>${anything.description}</td><td>${anything.quantity}</td><td>${anything.price}</td><td><a href="/inventory-edit?id=${anything.id }">EDIT</a></td><td><a href="/inventory-delete?id=${anything.id }">DELETE</a></td>
 					
 				</tr>
 			</c:forEach>

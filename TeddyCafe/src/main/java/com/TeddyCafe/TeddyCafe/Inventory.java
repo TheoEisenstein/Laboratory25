@@ -11,8 +11,9 @@ import javax.persistence.Table;
 @Table(name="items") //Name of my SQL table.
 public class Inventory {
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	//@Column(name="items_id")// Name of SQL column
+	@Id 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Long id;
 	private String name;
 	private String description;

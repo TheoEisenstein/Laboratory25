@@ -103,23 +103,24 @@ public class TeddyCafeController {
 		ModelAndView mav = new ModelAndView("administration0", "patrons", patronsList);
 		return mav;
 	}
-	@RequestMapping("/patron-edit")
-	public ModelAndView showEditForm(@RequestParam("id") Long id) {
-		ModelAndView mav = new ModelAndView("patron-edit");
-		mav.addObject("patron", patronsDao.findById(id));
-		return mav;
-	}
-	
-	@PostMapping("/patron-edit")
-	public ModelAndView subEditForm(Patrons patron) {
-		patronsDao.update(patron);
-		return new ModelAndView("redirect:/administration0");
-	}
+//	@RequestMapping("/patron-edit")
+//	public ModelAndView showEditForm(@RequestParam("id") Long id) {
+//		ModelAndView mav = new ModelAndView("patron-edit");
+//		mav.addObject("patron", patronsDao.findById(id));
+//		return mav;
+//	}
+//	
+//	@PostMapping("/patron-edit")
+//	public ModelAndView subEditForm(Patrons patron) {
+//		patronsDao.update(patron);
+//		return new ModelAndView("redirect:/administration0");
+//	}
 	
 	@RequestMapping("/inventory-create")
 	public ModelAndView showCreateInventory() {
 		return new ModelAndView("inventory-create");
 	}
+
 	@PostMapping("/inventory-create")
 	public ModelAndView create(Inventory inventory) {		
 		
@@ -127,24 +128,37 @@ public class TeddyCafeController {
 		
 		return new ModelAndView("redirect:/administration1");
 	}
-	
-	@PostMapping("/administration0")
-	public ModelAndView submitEditPatron(Patrons patrons) {
-		patronsDao.update(patrons);
-		return new ModelAndView("patron-edit");
-	}
+
+//	
+//	@PostMapping("/administration0")
+//	public ModelAndView submitEditPatron(Patrons patrons) {
+//		patronsDao.update(patrons);
+//		return new ModelAndView("patron-edit");
+//	}
 	@RequestMapping("/inventory-delete")
 	public ModelAndView deleteInventory(@RequestParam("id") Long id) {
 		inventoryDao.delete(id);
 		return new ModelAndView("redirect:/administration1");
 		
 	}
-
-	@RequestMapping("/patron-delete")
-	public ModelAndView delete(@RequestParam("id") Long id) {
-		patronsDao.delete(id);
-		return new ModelAndView("redirect:/administration0");
+	@RequestMapping("/inventory-edit")
+	public ModelAndView showEditForm(@RequestParam("id") Long id) {
+		ModelAndView mav = new ModelAndView("inventory-edit");
+		mav.addObject("inventory", inventoryDao.findById(id));
+		return mav;
 	}
+	@PostMapping("/inventory-edit")
+	public ModelAndView makeEditInventory(Inventory inventory) {
+		inventoryDao.update(inventory);
+		return new ModelAndView("redirect:/administration1");
+	}
+	
+
+//	@RequestMapping("/patron-delete")
+//	public ModelAndView delete(@RequestParam("id") Long id) {
+//		patronsDao.delete(id);
+//		return new ModelAndView("redirect:/administration0");
+//	}
 	
 	@RequestMapping("/administration1")
 	public ModelAndView administration1() {
